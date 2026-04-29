@@ -16,6 +16,11 @@ const Login = () => {
     console.log("Login:", { email, password });
   };
 
+  const handleGoogleLogin = () => {
+    // REDIRECCIÓN AL BACKEND
+    window.location.href = "http://localhost:8080/oauth2/authorization/google";
+  };
+
   return (
     <main className="zona-contacto login-page">
       <div className="formulario-contacto">
@@ -43,12 +48,9 @@ const Login = () => {
         </button>
 
 
-        <button
-            className="btn-google"
-           onClick={() => console.log("Login con Google (pendiente)")}
-        >
-        <img src="/google-logo.png" alt="Google" className="google-icon" />
-            Iniciar sesión con Google
+        <button className="btn-google" onClick={handleGoogleLogin}>
+          <img src="/google-logo.png" alt="Google" className="google-icon" />
+          Iniciar sesión con Google
         </button>
 
         <button
